@@ -4,7 +4,7 @@ import { useIndex } from "./hooks";
 import { Div } from "./styles";
 
 export const Index = () => {
-	const [x, useX] = useIndex();
+	const [threads] = useIndex();
 
-	return <Div>ああああああeee</Div>;
+	return <Div>{JSON.stringify(threads)}</Div>;
 };
