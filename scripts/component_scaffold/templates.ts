@@ -9,13 +9,12 @@ export type ${name}Props = {
   name: string;
 };
 
-export const ${name}: React.FC<${name}Props> = ({ name }: ${name}Props) => {
+const [x, useX] = use${name}()
 
-  const [x, useX] = use${name}()
-  
-  return (<Div>
+export const ${name}: React.FC<${name}Props> = ({ name }: ${name}Props) => (
+  <Div>
     <p>Enjoy {name} component life!!</p>
-  </Div>)
+  </Div>
 );
 `;
 
