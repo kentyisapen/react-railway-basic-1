@@ -10,7 +10,7 @@ export type ${name}Props = {
 };
 
 export const ${name}: React.FC<${name}Props> = ({ name }: ${name}Props) => {
-  const [x, useX] = use${name}()
+  const [x, setX] = use${name}()
   
   return (
     <Div>
@@ -25,11 +25,11 @@ export const createHooksTemplate = (
 ): string => `import  { useState } from 'react';
 
 export const use${name} = () => {
-  const [x, useX] = useState(0)
+  const [x, setX] = useState(0)
 
   return [
     x,
-    useX
+    setX
   ]
 }
 
