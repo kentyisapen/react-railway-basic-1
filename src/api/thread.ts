@@ -1,5 +1,5 @@
-import axios from "axios";
 import type { Thread } from "../types/thread";
+import axios from "./initAxios";
 
 export const ThreadAPI = {
 	get: {
@@ -8,7 +8,7 @@ export const ThreadAPI = {
 		 *
 		 * @return {Thread[]}
 		 */
-		thread: async () => {
+		threads: async () => {
 			const { data } = await axios.get<Thread[]>("/threads");
 			return data;
 		},
