@@ -11,6 +11,7 @@ export const Table = styled.table`
 	border-top: 1px solid #000000;
 	border-left: 1px solid #000000;
 	max-width: 800px;
+	min-width: 500px;
 `;
 
 export const Caption = styled.caption`
