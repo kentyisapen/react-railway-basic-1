@@ -14,11 +14,7 @@ export const Table = styled.table`
 	min-width: 500px;
 `;
 
-export const Caption = styled.caption`
-	font-size: 24px;
-	text-align: left;
-	padding: 12px;
-`;
+export const Caption = styled.caption``;
 
 export const Tbody = styled.tbody``;
 

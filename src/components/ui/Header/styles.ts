@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // import { ThemeProps } from 'styles/Theme';
@@ -17,7 +18,7 @@ export const STitle = styled.span`
 	margin: 0 20px;
 `;
 
-export const SCreateThreadLink = styled.a`
+export const SCreateThreadLink = styled(Link)`
 	color: white;
 	margin: 0 20px;
 	:hover {

@@ -60,3 +60,11 @@ Text.defaultProps = {
 	fontWeight: "normal",
 	lineHeight: 1,
 };
+
+export const H1 = styled.h1`
+	font-size: 24px;
+	text-align: left;
+	padding: 12px;
+	padding-left: 0;
+	font-weight: normal;
+`;

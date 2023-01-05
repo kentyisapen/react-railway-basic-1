@@ -3,6 +3,7 @@ import { useThreadIndex } from "./hooks";
 
 import { Div, Table, Tbody, Td, Tr, Caption } from "./styles";
 import { Thread } from "../../../../types/thread";
+import { H1 } from "../../../util/baseElements";
 
 export type ThreadIndexProps = {
 	threads: Thread[];
@@ -24,7 +25,9 @@ export const ThreadIndex: React.FC<ThreadIndexProps> = ({
 	return (
 		<Div>
 			<Table>
-				<Caption>新着情報</Caption>
+				<Caption>
+					<H1>新着情報</H1>
+				</Caption>
 				<Tbody>{tableRows}</Tbody>
 			</Table>
 		</Div>
