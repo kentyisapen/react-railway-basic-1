@@ -2,23 +2,24 @@ import { AxiosError } from "axios";
 import type { Thread } from "../types/thread";
 import axios from "./initAxios";
 import { API_ERROR_MESSAGE } from "./const";
+import { ApiReturns } from "./types";
 
 export const ThreadAPI = {
 	get: {
 		/**
 		 * スレッド一覧を取得する
 		 *
-		 * @return {Thread[] | null} 失敗時はnull
+		 * @return {Promise<ApiReturns<Thread[]>>} 指定したスレッド、もしくはエラーを含むオブジェクト
 		 */
-		threads: async () => {
-			const { data } = await axios
-				.get<Thread[]>("/threads")
-				.catch((e: AxiosError) => {
-					console.log(e);
-					alert(API_ERROR_MESSAGE);
-					return { data: null };
-				});
-			return data;
+		threads: async (): Promise<ApiReturns<Thread[]>> => {
+			try {
+				const { data } = await axios.get<Thread[]>("/threads");
+				return { isValid: true, data: data, error: undefined };
+			} catch (e) {
+				console.log(e);
+				alert(API_ERROR_MESSAGE);
+				return { isValid: false, data: undefined, error: e };
+			}
 		},
 	},
 	post: {
@@ -26,19 +27,19 @@ export const ThreadAPI = {
 		 * スレッドを作成する
 		 *
 		 * @param {string} タイトル
-		 * @return {Thread | null} 作成したスレッド 失敗時はnull
+		 * @return {Promise<ApiReturns<Thread>>} 作成したスレッド、もしくはエラーを含むオブジェクト
 		 */
-		threads: async (title: string) => {
-			const { data } = await axios
-				.post<Thread>("/threads", {
+		threads: async (title: string): Promise<ApiReturns<Thread>> => {
+			try {
+				const { data } = await axios.post<Thread>("/threads", {
 					title: title,
-				})
-				.catch((e: AxiosError) => {
-					console.log(e);
-					alert(API_ERROR_MESSAGE);
-					return { data: null };
 				});
-			return data;
+				return { isValid: true, data: data, error: undefined };
+			} catch (e) {
+				console.log(e);
+				alert(API_ERROR_MESSAGE);
+				return { isValid: false, data: undefined, error: e };
+			}
 		},
 	},
 };

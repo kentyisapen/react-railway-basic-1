@@ -10,17 +10,18 @@ export const ThreadNew: React.FC = () => {
 	return (
 		<Div>
 			<H1>スレッドの新規作成</H1>
-			<Input
-				placeholder="スレッドタイトル"
-				value={newThreadTitle}
-				onChange={(e) => setNewThreadTtile(e.target.value)}
-			></Input>
-			<SSplitDiv>
-				<SBackToTopLink to="/">トップへ戻る</SBackToTopLink>
-				<SSubmitButton onClick={() => createNewThread(newThreadTitle)}>
-					作成
-				</SSubmitButton>
-			</SSplitDiv>
+			<form onSubmit={(e) => createNewThread(e)}>
+				<Input
+					placeholder="スレッドタイトル"
+					value={newThreadTitle}
+					onChange={(e) => setNewThreadTtile(e.target.value)}
+					required
+				></Input>
+				<SSplitDiv>
+					<SBackToTopLink to="/">トップへ戻る</SBackToTopLink>
+					<SSubmitButton type="submit">作成</SSubmitButton>
+				</SSplitDiv>
+			</form>
 		</Div>
 	);
 };

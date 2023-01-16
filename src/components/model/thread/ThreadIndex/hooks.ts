@@ -7,8 +7,8 @@ export const useThreadIndex = () => {
 
 	useEffect(() => {
 		(async () => {
-			const data = await ThreadAPI.get.threads();
-			if (!data) return;
+			const { isValid, data } = await ThreadAPI.get.threads();
+			if (!isValid) return;
 			setThreads(data);
 		})();
 	}, []);
