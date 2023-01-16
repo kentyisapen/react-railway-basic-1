@@ -10,7 +10,7 @@ export type ${name}Props = {
 };
 
 export const ${name}: React.FC<${name}Props> = ({ name }: ${name}Props) => {
-  const [x, setX] = use${name}()
+  const {x, setX} = use${name}()
   
   return (
     <Div>
