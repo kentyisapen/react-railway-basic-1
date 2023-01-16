@@ -1,6 +1,7 @@
 import { AxiosError } from "axios";
 import type { Thread } from "../types/thread";
 import axios from "./initAxios";
+import { API_ERROR_MESSAGE } from "./const";
 
 export const ThreadAPI = {
 	get: {
@@ -13,7 +14,8 @@ export const ThreadAPI = {
 			const { data } = await axios
 				.get<Thread[]>("/threads")
 				.catch((e: AxiosError) => {
-					alert(e);
+					console.log(e);
+					alert(API_ERROR_MESSAGE);
 					return { data: null };
 				});
 			return data;
@@ -32,7 +34,8 @@ export const ThreadAPI = {
 					title: title,
 				})
 				.catch((e: AxiosError) => {
-					alert(e);
+					console.log(e);
+					alert(API_ERROR_MESSAGE);
 					return { data: null };
 				});
 			return data;
