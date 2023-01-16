@@ -1,11 +1,17 @@
-import  { useState } from 'react';
+import { useEffect, useState } from "react";
+import { ThreadAPI } from "../../../../api/thread";
+import { Thread } from "../../../../types/thread";
 
 export const useThreadIndex = () => {
-  const [x, setX] = useState(0)
+	const [threads, setThreads] = useState<Thread[]>([]);
 
-  return [
-    x,
-    setX
-  ]
-}
+	useEffect(() => {
+		(async () => {
+			const data = await ThreadAPI.get.threads();
+			if (!data) return;
+			setThreads(data);
+		})();
+	}, []);
 
+	return { threads };
+};

@@ -5,15 +5,21 @@ import { useThreadNew } from "./hooks";
 import { Div, Input, SBackToTopLink, SSplitDiv, SSubmitButton } from "./styles";
 
 export const ThreadNew: React.FC = () => {
-	const [x, setX] = useThreadNew();
+	const { newThreadTitle, setNewThreadTtile, createNewThread } = useThreadNew();
 
 	return (
 		<Div>
 			<H1>スレッドの新規作成</H1>
-			<Input placeholder="スレッドタイトル"></Input>
+			<Input
+				placeholder="スレッドタイトル"
+				value={newThreadTitle}
+				onChange={(e) => setNewThreadTtile(e.target.value)}
+			></Input>
 			<SSplitDiv>
 				<SBackToTopLink to="/">トップへ戻る</SBackToTopLink>
-				<SSubmitButton>作成</SSubmitButton>
+				<SSubmitButton onClick={() => createNewThread(newThreadTitle)}>
+					作成
+				</SSubmitButton>
 			</SSplitDiv>
 		</Div>
 	);

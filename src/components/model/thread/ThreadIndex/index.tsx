@@ -9,10 +9,8 @@ export type ThreadIndexProps = {
 	threads: Thread[];
 };
 
-export const ThreadIndex: React.FC<ThreadIndexProps> = ({
-	threads,
-}: ThreadIndexProps) => {
-	// const [x, setX] = useThreadIndex();
+export const ThreadIndex = () => {
+	const { threads } = useThreadIndex();
 
 	const tableRows = threads.map((thread) => {
 		return (
