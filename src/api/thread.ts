@@ -7,7 +7,7 @@ export const ThreadAPI = {
 		/**
 		 * スレッド一覧を取得する
 		 *
-		 * @return {Thread[]}
+		 * @return {Thread[] | null} 失敗時はnull
 		 */
 		threads: async () => {
 			const { data } = await axios
@@ -23,7 +23,8 @@ export const ThreadAPI = {
 		/**
 		 * スレッドを作成する
 		 *
-		 * @return {Thread}
+		 * @param {string} タイトル
+		 * @return {Thread | null} 作成したスレッド 失敗時はnull
 		 */
 		threads: async (title: string) => {
 			const { data } = await axios
