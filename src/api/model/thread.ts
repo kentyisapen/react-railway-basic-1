@@ -1,8 +1,8 @@
 import { AxiosError } from "axios";
-import type { Thread } from "../types/thread";
-import axios from "./initAxios";
-import { API_ERROR_MESSAGE } from "./const";
-import { ApiReturns } from "./types";
+import type { Thread } from "../../types/thread";
+import axios from "../initAxios";
+import { API_ERROR_MESSAGE } from "../const";
+import { ApiReturns } from "../types";
 
 export const ThreadAPI = {
 	get: {

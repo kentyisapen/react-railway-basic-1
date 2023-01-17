@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ThreadAPI } from "../../../../api/thread";
+import { ThreadAPI } from "../../../../api";
 import { useNavigate } from "react-router-dom";
 
 export const useThreadNew = () => {

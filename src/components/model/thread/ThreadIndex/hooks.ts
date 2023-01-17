@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ThreadAPI } from "../../../../api/thread";
+import { ThreadAPI } from "../../../../api/model/thread";
 import { Thread } from "../../../../types/thread";
 
 export const useThreadIndex = () => {

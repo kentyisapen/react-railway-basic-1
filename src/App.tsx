@@ -3,8 +3,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Header } from "./components/ui/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Index } from "./components/page/Index";
-import { New } from "./components/page/thread/New";
+import { Index as ThreadIndex } from "./components/page/Index";
+import { New as ThreadNew } from "./components/page/thread/New";
+import { Show as ThreadShow } from "./components/page/thread/Show";
 
 function App() {
 	return (
@@ -13,8 +14,9 @@ function App() {
 				<Header></Header>
 				<main>
 					<Routes>
-						<Route path="/" element={<Index />} />
-						<Route path="/thread/new" element={<New />} />
+						<Route path="/" element={<ThreadIndex />} />
+						<Route path="/thread/new" element={<ThreadNew />} />
+						<Route path="/thread/:thread_id" element={<ThreadShow />} />
 					</Routes>
 				</main>
 			</BrowserRouter>
