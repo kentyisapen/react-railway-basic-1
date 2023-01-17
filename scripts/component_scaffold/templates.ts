@@ -27,10 +27,10 @@ export const createHooksTemplate = (
 export const use${name} = () => {
   const [x, setX] = useState(0)
 
-  return [
+  return {
     x,
     setX
-  ]
+  }
 }
 
 `;
