@@ -68,3 +68,11 @@ export const H1 = styled.h1`
 	padding-left: 0;
 	font-weight: normal;
 `;
+
+export const H2 = styled.h1`
+	font-size: 20px;
+	text-align: left;
+	padding: 12px;
+	padding-left: 0;
+	font-weight: normal;
+`;
