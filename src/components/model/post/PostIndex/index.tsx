@@ -11,7 +11,7 @@ export type PostIndexProps = {
 export const PostIndex: React.FC<PostIndexProps> = ({
 	threadId,
 }: PostIndexProps) => {
-	const { posts, title } = usePostIndex(threadId);
+	const { posts, title, isLoaded } = usePostIndex(threadId);
 
 	const tableRows = posts.map((post) => {
 		return (
@@ -26,7 +26,7 @@ export const PostIndex: React.FC<PostIndexProps> = ({
 			<Table>
 				<Caption>
 					<H1>{title}</H1>
-					{tableRows.length == 0 ? <H2>投稿がありません</H2> : null}
+					{tableRows.length == 0 && isLoaded ? <H2>投稿がありません</H2> : null}
 				</Caption>
 				<Tbody>{tableRows}</Tbody>
 			</Table>
