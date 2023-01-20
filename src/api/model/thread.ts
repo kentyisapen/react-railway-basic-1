@@ -1,5 +1,3 @@
-import { AxiosError } from "axios";
-import type { Thread } from "../../types/thread";
 import axios from "../initAxios";
 import { API_ERROR_MESSAGE } from "../const";
 import {
