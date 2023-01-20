@@ -1,4 +1,4 @@
-import { PostListGetResponse } from "../../types/post";
+import { PostListGetResponse } from "../types";
 import { ApiReturns } from "../types";
 import axios from "../initAxios";
 import { API_ERROR_MESSAGE } from "../const";
